@@ -10,14 +10,17 @@ from email import encoders
 from email.mime.base import MIMEBase
 
 
-#write the path to the folder where you put this code.
-folderpath = 'C:\\Users\\HPr\\Desktop\\automail\\'
-SenderAddress = "your@email"
-password = "YOUR_PASSWORD"
+#enter the email and password i gave you below.
+
+SenderAddress = "THE EMAIL ADRESS THAT I GAVE YOU"
+password = "THE PASSWORD"
+
 
 
 #DO NOT TOUCH THE CODE BELOW !!!!!!
-
+###########################################################################################################
+###########################################################################################################
+folderpath = ''
 print('working... DO NOT CLOSE THIS WINDOW YOU MORON!!')
 e = pd.read_excel(folderpath+"email.xlsx")
 emails = e['Emails'].values
@@ -67,7 +70,7 @@ for email, cname, lang in zip(emails, cnames, langs):
     elif lang in ['EN', 'en', 'En', 'eN', 'ENG', 'eng','english']:
       bodyf = MIMEMultipart()
       msgf = "To {cname},\n\nSubject : sponsoring request \n\nSuperVehiculeOne Project (https://sv1project.tech) is created by a team of highschool students from all over Morocco, dedicated to raising the rate of innovation in the MENA Region as well as achieving the 9th and 13th SDGs.The project has been and will be fully designed and built by high school students that have displayed exceedingly big interest in the project and extraordinary intellect that qualifies them to work on such remarkable things.\nWith {cname}’s community and mission to empower young people to have more developed and smarter lifestyles, we strongly believe our project will create a great impact if it turns out to be realistically created, with {cname}’s support as our corporate sponsor.\nIn this role, your company would provide monetary contributions or media and press releases to make this youthfully fresh project triumphant. As our official sponsor, we will promote your company on all social media channels and add your logo to the car and to our website. We will also make special arrangements to highlight {cname}’s involvement in creating SV1, as well as feature interested employees as mentors or keynote speakers. Alternatively, your team could choose from sponsorship tiers ranging from 10 000 MAD to 15 000 MAD, detailed in the attached PDF document. All sponsorships are negotiable and can be further discussed.\nIf this excites your team, we’d like to continue our conversation. Would you be available to schedule a call at your earliest convenience to discuss further details? Please reach out at contact@sv1project.tech. Looking forward to hearing from you soon!\nThank you, \n\nOutreach Team @ SV1 Project"
-      messagef = msg.format(cname=cname)
+      messagef = msgf.format(cname=cname)
       subjectf = "Sponsorship request"
       bodyf["From"] = SenderAddress
       bodyf["To"] = email
