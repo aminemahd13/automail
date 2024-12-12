@@ -21,7 +21,7 @@ password = "THE PASSWORD"
 ###########################################################################################################
 ###########################################################################################################
 folderpath = ''
-print('working... DO NOT CLOSE THIS WINDOW YOU MORON!!')
+print('working... DO NOT CLOSE THIS WINDOW !!')
 e = pd.read_excel(folderpath+"email.xlsx")
 emails = e['Emails'].values
 cnames = e['cnames'].values
@@ -102,7 +102,7 @@ for email, cname, lang in zip(emails, cnames, langs):
       
 
     else:
-      print('language error!... check the language you chose you idiot!')
+      print('language error!... check the language you chose !')
 
 server.quit()
 
